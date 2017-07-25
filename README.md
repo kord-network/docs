@@ -43,16 +43,12 @@ for each concept for a more detailed description):
 
 ## Implementations
 
-* go-meta - The Go META library
-
-TODO: Link the above to the GitHub repositories.
+* [go-meta](https://github.com/meta-network/go-meta) - The Go META library
 
 ## Tools
 
-* meta-tools - Tools for converting structured data (e.g. XML documents) into
-  META object graphs
-
-TODO: Link the above to the GitHub repositories.
+* [meta-tools](https://github.com/meta-network/meta-tools) - Tools for
+  converting structured data (e.g. XML documents) into META object graphs
 
 ## Contribute
 

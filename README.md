@@ -55,8 +55,8 @@ TODO: Link the above to the GitHub repositories.
 TODO: Link the above to the GitHub repositories.
 
 ## Contribute
-
-TODO: Link to the META contributing guide.
+Please follow our contribution. Your help is appreciated, thanking you.
+[Contribution guide](CONTRIBUTING.md)
 
 ## License
 

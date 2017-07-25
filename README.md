@@ -56,5 +56,4 @@ TODO: Link to the META contributing guide.
 
 ## License
 
-TODO: Decide on an appopriate license / copyright for the documents in this
-repository.
+MIT © JAAK MUSIC LTD

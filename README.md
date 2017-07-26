@@ -1,15 +1,19 @@
 # META Concepts and Specifications
 
-This repository defines concepts and specifications of the META protocol.
+META is both a network of distributed, decentralised systems (the META
+network), and a protocol which governs how those systems communicate
+(the META protocol).
+
+This repository defines concepts and specifications of META.
 
 ## Status
 
-The META protocol is at an early stage of development, expect the documents in
+META is at an early stage of development, expect the documents in
 this repository to change frequently during this early phase.
 
 ## Concepts
 
-The primary aim of the META protocol is to provide the tooling for building
+The primary aim of META is to provide the tooling for building
 large scale, decentralised databases describing real world entities, where
 individual participants are both economically incentivised to provide useful,
 efficient services and are held accountable for any wrong doing.
@@ -39,7 +43,15 @@ for each concept for a more detailed description):
 * [META Merger](concepts/merger.md) - a META service which combines multiple
   META objects into a single META object
 
-* [META Identity](concepts/identity.md) - TODO define META Identity
+* META Identity - a META Identity is used to both identify
+participants in the network using a cryptographic identifier and to provide verifiable
+information about those participants. Further information to follow.
+
+* META Courtroom - a suite of smart contracts which can be
+used to claim collateral if a META service is found guilty of wrong doing. Further information to follow.
+
+* META Token - META tokens are used in automated exchange between services and providers on the network. Tokens can also be used explicitly by applications that implement the META protocol and seek to create or retrieve META objects.
+
 
 ## Implementations
 

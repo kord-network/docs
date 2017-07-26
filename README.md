@@ -41,6 +41,8 @@ for each concept for a more detailed description):
 
 * [META Identity](concepts/identity.md) - TODO define META Identity
 
+* [META Courtroom](concepts/courtroom.md) - a suite of smart contracts which can be used to claim collateral if a META service is found guilty of wrong doing.
+
 ## Implementations
 
 * [go-meta](https://github.com/meta-network/go-meta) - The Go META library

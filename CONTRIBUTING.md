@@ -2,15 +2,16 @@
 ___
 The META protocol specifies how to connect data objects, data services, and datastores to create a persistent append-only shared data network. The protocol rewards actors in the network that serve, connect and process information, creating a shared global namespace for structured commercial metadata.
 
-Firstly, thanks for wanting to help with the development of the META protocol. All contributions, code or documents, should come from a forked version of the respective repostitory. Then the proposed changes must be submitted via a pull request to the master branch. All pull requests must be reviewed by the maintainers of the repostitory in question. Once a pull request has been reviewed & approved; you should merge and rebase, and then delete the branch.
+Firstly, thanks for wanting to help with the development of the META protocol. All contributions, code or documents, should come from a forked version of the respective repository. Then the proposed changes must be submitted via a pull request to the master branch. All pull requests must be reviewed by the maintainers of the repository in question. Once a pull request has been reviewed & approved; you should merge and rebase, and then delete the branch.
 GitHub [keywords](https://help.github.com/articles/closing-issues-using-keywords/) should be used when closing pull requests and issues.
 
 If you wish to submit more substantial changes or additions, please see the feature contributions section below.
 
 
 ## Git practice
+
 Branches should be named with a brief semantic title.
-Commit messages should follow these rules:
+Commit messages should be capitalised and follow these rules:
 ```
 Short (50 chars or less) summary of changes
 
@@ -32,13 +33,22 @@ Issue: #1, #2
 ```
 A properly formed Git commit subject line should always be able to complete the following sentence:
 
-If applied, this commit will _your subject line here_
+If applied, this commit will _Your subject line here_
 
 **Please refer to [this guide](https://chris.beams.io/posts/git-commit/) for additional information.**
 
 
 ## Feature Contributions
+
 For the submission of more substantial changes or additions, an issue should be opened outlining what is being proposed for implementation. The title of the issue should be descriptive and brief, follow the same rules as a commit message, as outlined above. The body of the issue should detail the reasoning for the need of the work to be carried out and the desired outcome.
 
 ## Code Formatting
-_**Language specific formatting can be found in each repostitory.**_
+
+### Javascript
+All Javascript must be formatted with [ESLint](http://eslint.org/) using the JAAK [configuration](https://github.com/jaakmusic/eslint-config-jaak).
+
+### Go
+Go code should match the output of `gofmt -s`.
+
+### Solidity
+All Solidity files must follow the style guide found [here](http://solidity.readthedocs.io/en/develop/style-guide.html).

@@ -51,8 +51,7 @@ for each concept for a more detailed description):
   converting structured data (e.g. XML documents) into META object graphs
 
 ## Contribute
-Please follow our contribution. Your help is appreciated, thanking you.
-[Contribution guide](CONTRIBUTING.md)
+We welcome community contributions, please see the [contributing guide](CONTRIBUTING.md), thanking you.
 
 ## License
 

@@ -55,8 +55,7 @@ TODO: Link the above to the GitHub repositories.
 TODO: Link the above to the GitHub repositories.
 
 ## Contribute
-Please follow our contribution. Your help is appreciated, thanking you.
-[Contribution guide](CONTRIBUTING.md)
+We welcome community contributions, please see the [contributing guide](CONTRIBUTING.md), thanking you.
 
 ## License
 

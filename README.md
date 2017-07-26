@@ -50,7 +50,7 @@ information about those participants. Further information to follow.
 * META Courtroom - a suite of smart contracts which can be
 used to claim collateral if a META service is found guilty of wrong doing. Further information to follow.
 
-* META Token - META tokens are used in automated exchange between services and providers on the network. Tokens can also be used explicitly by applications that implement the META protocol and seek to create or retrieve META objects.
+* META Token - META tokens are used in automated exchange between services and providers on the network. Tokens can also be used explicitly by applications that implement the META protocol and seek to create or retrieve META objects. Further information to follow.
 
 
 ## Implementations

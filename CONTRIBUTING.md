@@ -1,6 +1,5 @@
 # Contribution Guide
 ___
-The META protocol specifies how to connect data objects, data services, and datastores to create a persistent append-only shared data network. The protocol rewards actors in the network that serve, connect and process information, creating a shared global namespace for structured commercial metadata.
 
 Firstly, thanks for wanting to help with the development of the META protocol. All contributions, code or documents, should come from a forked version of the respective repository. Then the proposed changes must be submitted via a pull request to the master branch. All pull requests must be reviewed by the maintainers of the repository in question. Once a pull request has been reviewed & approved; you should merge and rebase, and then delete the branch.
 GitHub [keywords](https://help.github.com/articles/closing-issues-using-keywords/) should be used when closing pull requests and issues.

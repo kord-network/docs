@@ -51,5 +51,4 @@ be easily standardized so all witness contracts implement the same interface.
 
 Each expert witness may need to submit different types of evidence. Thus, this abstraction allows us to handle polymorphic evidence.
 
-An early phase reference implementation of a courtroom for a simple mirror game
-can be found [here](https://github.com/ethersphere/swap-swear-and-swindle/tree/features/gh_3)
+TODO - Add a link to example

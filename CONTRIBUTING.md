@@ -8,7 +8,7 @@ GitHub [keywords](https://help.github.com/articles/closing-issues-using-keywords
 If you wish to submit more substantial changes or additions, please see the feature contributions section below.
 
 
-## Git practice
+## Git Practice
 
 Branches should be named with a brief semantic title.
 Commit messages should be capitalised and follow these rules:
@@ -41,6 +41,7 @@ If applied, this commit will _Your subject line here_
 ## Feature Contributions
 
 For the submission of more substantial changes or additions, an issue should be opened outlining what is being proposed for implementation. The title of the issue should be descriptive and brief, follow the same rules as a commit message, as outlined above. The body of the issue should detail the reasoning for the need of the work to be carried out and the desired outcome.
+
 
 ## Code Formatting
 

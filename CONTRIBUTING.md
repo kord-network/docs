@@ -50,7 +50,7 @@ All Javascript must be formatted with [ESLint](http://eslint.org/) using the JAA
 ### Go
 Go code should match the output of `gofmt -s`.
 
-Go code must be documented adhering to the official Go [commentary](https://golang.org/doc/effective_go.html#commentary) guidelines.
+Go code should be documented by following to the official Go [commentary](https://golang.org/doc/effective_go.html#commentary) guidelines.
 
 ### Solidity
 All Solidity files must follow the style guide found [here](http://solidity.readthedocs.io/en/develop/style-guide.html).

@@ -1,6 +1,8 @@
 # META Courtroom
 
-This document outlines the concept of a META courtroom which is a suite of smart contracts which can be used to claim collateral if a META service is found guilty of wrong doing.
+This document outlines the concept of a META Courtroom; which is a suite of smart contracts
+for META service agreements, between service provider and client, which can
+be used to claim collateral if a META service is found guilty of wrong doing.
 
 ## Status of this Document
 
@@ -16,10 +18,9 @@ in which they can be held accountable for not complying with their quality guara
 Provider swears to this promise by depositing a collateral which they stake to lose
 in case of foul play.
 
-If some service was not provided as promised, clients can open a case and start
-a litigation process. In case the evidence is available and can prove the accusation,
-the service provider can be held accountable by an automatic self-enforcing punitive
-measure.
+If some service was not provided as agreed upon, clients can open a case and start
+a litigation process. If deterministic evidence is available to prove the accusation,
+the service provider can be held accountable by an automatic self-enforcing punitive measure.
 
 Such accountability is crucial in the design of scalable decentralised service economies.
 
@@ -36,19 +37,22 @@ evidences, the compensation amount for the case of a valid case...
 ## Implementation
 
 The courtroom framework includes a solidity smart contracts suite, an ABI interface
-specification and tools to interact with these contracts.
+specification and tools to interact with these contracts. The development work for this
+can be found in [this repository](https://github.com/ethersphere/swap-swear-and-swindle).
 
 A courtroom suite includes a generic contract which knows how to open a case and conduct a trial.
 An abstract trial is described by a finite state automaton states of which correspond to stages of litigation and
 the transitions are labeled by various outcomes of evaluating evidence submitted to the respective expert witnesses
 associated with the stage.
-The `Swindle` contact just orchestrates the transition through the stages calling the witness contracts, handles grace periods to control the deadline for submitting evidence (challenges or their refutations), reach a guilty/non-guilty verdict accordingly.
+The `Swindle` contract orchestrates the transition through the stages calling the witness contracts,
+handles grace periods to control the deadline for submitting evidence (challenges or their refutations),
+reach a guilty/non-guilty verdict accordingly.
 
-The specific service contract defines the rules through describing the actual stages by virtue of assigning
+The specific service contract describes the rules of each stage by assigning
 particular expert witnesses to trial stages: these witness contracts are supposed to be giving a testimony
 evaluating evidence submitted to them. The request response process between the judge and the witnesses can
 be easily standardized so all witness contracts implement the same interface.
 
 Each expert witness may need to submit different types of evidence. Thus, this abstraction allows us to handle polymorphic evidence.
 
-TODO - Add a link to example
+

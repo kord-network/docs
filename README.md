@@ -43,9 +43,9 @@ for each concept for a more detailed description):
 * [META Merger](concepts/merger.md) - a META service which combines multiple
   META objects into a single META object
 
-* META Identity - a META Identity is used to both identify
+* [META Identity](concepts/identity.md) - a META Identity is used to both identify
 participants in the network using a cryptographic identifier and to provide verifiable
-information about those participants. Further information to follow.
+information about those participants.
 
 * [META Courtroom](concepts/courtroom.md) - a suite of smart contracts for META service
 agreements, between service provider and client, which can be used to claim collateral

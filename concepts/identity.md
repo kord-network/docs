@@ -22,17 +22,16 @@ designed to be a self-sovereign identity with two functions:
 
 ## Terminology
 
-*TODO*: complete definitions of terms used in this document
-
-- Custodian
-- Smart Contract
-- Identity Owner
-- META-ID
-- Identity Signature Scheme
-- Identity Custody Scheme
-- Trust Item - a detached cryptographic signature of a metadata item
-
-sha3() indicates keccak256 hashing of the contents within parentheses.
+- Custodian - an Ethereum address appointed by the META Identity owner and granted
+  certain privileges in order to act on the owner's behalf.
+- Identity Custody Scheme - system for controlling the ownership of META Identities.
+- Identity Owner - an Ethereum address registered as the owner of a META Identity.
+- Identity Signature Scheme - system for controlling the cryptographic signing of
+  META Identity metadata.
+- Smart Contract - a collection of code (functions) and data (state) that resides
+  at a specific address on the Ethereum blockchain.
+- Trust Item - a detached cryptographic signature of a metadata item.
+- `sha3()` - indicates `keccak256` hashing of the contents within parentheses.
 
 ## Core concepts
 

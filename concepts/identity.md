@@ -69,7 +69,7 @@ In the following we assume the META-ID to be `sha3("foo")`.
 #### Add a new identity
 
 ```
-Identity.register(bytes32 metaidhash, address owner);
+Identity.register(bytes32 metaIdHash, address owner);
 ```
 
 This will make `owner` the owner of the META-ID, along with the ENS node `namehash("foo.id.meta")`. If the META-ID has already been registered, the method will throw an exception.
@@ -222,24 +222,24 @@ If the key is "meta", the signature is a global signature for the META-ID itself
 ##### Adding a signature
 
 ```
-setSignature(bytes32 signermetaid, bytes32 targetmetaid, bytes32 metadataitemidhash, bytes32 metadatahash, bytes32 signaturehash)
+setSignature(bytes32 signerMetaId, bytes32 targetMetaId, bytes32 metadataItemIdHash, bytes32 metadataHash, bytes32 signatureHash)
 ```
 
-`metadatahash` content identified by `metadataitemidhash` belonging to `targetmetaid` is signed by `signermetaid`. The content hash of the signature is `signaturehash`.
+`metadataHash` content identified by `metadataItemIdHash` belonging to `targetMetaId` is signed by `signerMetaId`. The content hash of the signature is `signatureHash`.
 
 ##### Retrieving signatures
 
 ```
-count = getSignatureCount(bytes32 targetmetaid, bytes32 metadataitemidhash)
+count = getSignatureCount(bytes32 targetMetaId, bytes32 metadataItemIdHash)
 ```
 
-gets the number of signatures registered for metadata item identified by `metadataitemidhash`, owned by `targetmetaid`
+gets the number of signatures registered for metadata item identified by `metadataItemIdHash`, owned by `targetMetaId`
 
 ```
-signer, metadatahash, signaturehash = getSignatureByIndex(bytes32 targetmetaid, bytes32 metadataitemidhash, uint32 idx)
+signer, metadataHash, signatureHash = getSignatureByIndex(bytes32 targetMetaId, bytes32 metadataItemIdHash, uint32 idx)
 ```
 
-gets the `idx` signature from the array of signatures for the metadata item identified by `metadataitemidhash` owned by `targetmetaid`.
+gets the `idx` signature from the array of signatures for the metadata item identified by `metadataItemIdHash` owned by `targetMetaId`.
 
 #### Example
 
@@ -252,7 +252,7 @@ SIGNSWARMHASH=`gpg -abu <gpg-id> -o- metaid/aux/foo | swarm --stdin up`
 This signature would then be registered as follows:
 
 ```
-setSignature(sha3(metaid_signer), sha3(metaid_target), sha3("aux/foo"), "0xd3c5856a51886fa58e3add827837c1a708b0cbe3df8763f646a6f7eb5956dd4a", $SIGNSWARMHASH)
+setSignature(sha3(metaIdSigner), sha3(metaIdTarget), sha3("aux/foo"), "0xd3c5856a51886fa58e3add827837c1a708b0cbe3df8763f646a6f7eb5956dd4a", $SIGNSWARMHASH)
 
 ```
 

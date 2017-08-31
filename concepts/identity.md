@@ -36,31 +36,33 @@ sha3() indicates keccak256 hashing of the contents within parentheses.
 
 ## Core concepts
 
-A Meta Identity MUST define:
+A META Identity MUST define:
 
 - META-ID: A 32 byte ENS namehash
 - CID: A content-addressed identifier
 
-The META-ID is the UNIQUE identifier of the Meta Identity. It is IMMUTABLE. There are no constraints on the hash data. The META-ID is ONLY an index key, and MUST NOT be used for cryptographic purposes.
+The META-ID is the UNIQUE identifier of the META Identity. It is IMMUTABLE. The META-ID is ONLY an index key, and MUST NOT be used for cryptographic purposes.
 
 The CID MUST point to a valid META Object. The META Object MUST include a property "meta." The value of this property MUST be a data structure as defined in subsection "Core" under "Metadata."
 
-The manifest CAN include an arbitrary number of metadata items. These define claims of auxiliary identifiers linked to the Meta Identity. These SHOULD define data structures as defined in subsection "Auxiliary" under "Metadata."
+The META Object CAN include an arbitrary number of metadata items. These define claims of auxiliary identifiers linked to the META Identity. These SHOULD define data structures as defined in subsection "Auxiliary" under "Metadata."
 
 ### Ownership and permissions
 
-A Meta Identity MUST be owned by one single Ethereum address. The mapping of address to Meta Identity MUST be recorded on the blockchain. Ownership of the Meta Identity MUST be enforced through the Identity Custody Scheme. The initial Meta Identity owner SHOULD be the transaction sender of the Meta Identity instantiation.
+A META Identity MUST be owned by one single Ethereum address. The mapping of address to META Identity MUST be recorded on the Ethereum blockchain. Ownership of the META Identity MUST be enforced through the Identity Custody Scheme. The initial META Identity owner SHOULD be the transaction sender of the META Identity instantiation.
 
 This ownership CAN be transferred to a different Ethereum address. Activation of this feature SHOULD be optional, and MUST include a user-modifiable grace period during which reverting to previous ownership is possible.
 
-A Meta Identity owner CAN perform transfer of ownership. A Meta Identity owner CAN appoint a number of Ethereum addresses to act as *custodians*. These CAN through a vote perform transfer of ownership. A vote MUST require a message signed by a respective private key. The *minimum number of addresses* that must make up a custodian role, and *minimum ratio of votes* required to execute a transfer CAN ONLY be determined by the Meta Identity owner.
+A META Identity owner CAN perform transfer of ownership. A META Identity owner CAN appoint a number of Ethereum addresses to act as *custodians*. These CAN through a vote perform transfer of ownership. A vote MUST require a message signed by a respective private key. The *minimum number of addresses* that must make up a custodian role, and *minimum ratio of votes* required to execute a transfer CAN ONLY be determined by the META Identity owner.
 
 ### Implementation
 
 
-The Meta Identity uses ENS as backend for storage and retrieval, interfaced by the Identity and IdentityResolver contracts.
+The META Identity uses ENS as backend for storage and retrieval, interfaced by the Identity and IdentityResolver contracts.
 
 The Identity contract is upgradeable and MUST be registered in the IdentityController contract. As the IdentityController instantiates all permanent storage, and guarantees that the contents of these cannot be altered between upgrades. Therefore only the instance of the Identity contract that has been registered with the IdentityController can be considered valid for use.
+
+The IdentityResolver contract is used to set and resolve the CID content hash associated with an ENS node (META-ID). The content of a node can ONLY be set by the owner of that node.
 
 In the following we assume the META-ID to be `sha3("foo")`.
 
@@ -78,7 +80,7 @@ This will make `owner` the owner of the META-ID, along with the ENS node `nameha
 IdentityResolver.setContent(bytes32 node, bytes32 hash);
 ```
 
-sets the content hash `hash` as the metadata for the node `namehash("foo.id.meta")`
+sets the CID content hash `hash` as the metadata for the node `namehash("foo.id.meta")`
 
 #### Retrieve metadata for identity
 
@@ -86,7 +88,7 @@ sets the content hash `hash` as the metadata for the node `namehash("foo.id.meta
 IdentityResolver.content(bytes32 node);
 ```
 
-gets the content hash of the metadata for the node namehash("foo.id.meta")
+gets the CID content hash of the metadata for the node `namehash("foo.id.meta")`
 
 #### Retrieve the current valid Identity contract
 
@@ -105,9 +107,9 @@ gets the address of the current valid Identity Contract
 
 ### Metadata
 
-Meta Identity metadata MUST constitute two parts; Core and Auxiliary. Core metadata is REQUIRED and can be defined only once. The Auxiliary metadata is OPTIONAL, and an arbitrary number of Auxiliary metadata items may be defined.
+META Identity metadata MUST constitute two parts; Core and Auxiliary. Core metadata is REQUIRED and can be defined only once. The Auxiliary metadata is OPTIONAL, and an arbitrary number of Auxiliary metadata items may be defined.
 
-Metadata may ONLY be changed by the Meta Identity owner.
+Metadata may ONLY be changed by the META Identity owner.
 
 #### Core
 
@@ -122,7 +124,7 @@ parent		: CID // pointer to previous version of this metadata
 
 Auxiliary metadata items MUST be grouped in two subfolders; *key* and *aux*.
 
-All items in the *key* folder SHOULD be considered as public keys used by the Meta Identity for cryptographic signing purposes.
+All items in the *key* folder SHOULD be considered as public keys used by the META Identity for cryptographic signing purposes.
 
 All items in the *aux* folder SHOULD be considered as external identifiers that have no cryptographic function.
 
@@ -172,7 +174,7 @@ metaid/aux/xyzzy:
 022fe8c3-e8de-49e0-8cd5-59ed02ca45c7
 ```
 
-We can use *swarm recursive upload* to create a manifest that satisfies the Meta Identity metadata constraints:
+We can use *swarm recursive upload* to create a manifest that satisfies the META Identity metadata constraints:
 
 ```
 BZZHOST="127.0.0.1:8500" METABZZ=`swarm --manifest=true --recursive up metaid`; curl "http://$BZZHOST/bzzr:/$METABZZ?content_type=text/plain"
@@ -188,15 +190,15 @@ This will yield the following manifests on hash df32102800885d63dd0583da13df50ee
 {"entries":[{"hash":"0d615ea5f50d0eae42b3ee071f473e5c0b152a8a7c361c88a42d21bdc835c0cc","path":"bar","mode":420,"size":4,"mod_time":"2017-08-08T09:44:02+02:00"},{"hash":"d3c5856a51886fa58e3add827837c1a708b0cbe3df8763f646a6f7eb5956dd4a","path":"foo","mode":420,"size":3,"mod_time":"2017-08-08T09:43:53+02:00"},{"hash":"5032864c5d1ad9455a6b0ae68d87409b8f5f2957e222dd657f607fc2ebe593d5","path":"xyzzy","mode":420,"size":37,"mod_time":"2017-08-08T09:44:27+02:00"}]}
 ```
 
-The hash of the "meta" file represents the CBOR representation of the above JSON, as described in [Meta Object encoding](https://github.com/meta-network/docs/blob/master/concepts/object.md#object-encoding).
+The hash of the "meta" file represents the CBOR representation of the above JSON, as described in [META Object encoding](https://github.com/meta-network/docs/blob/master/concepts/object.md#object-encoding).
 
 ## Services
 
 ### Signing
 
-The Meta Network SHOULD provide a mechanism of Meta Identity trust.
+The META Network SHOULD provide a mechanism of META Identity trust.
 
-A Trust Item in Meta Identity SHOULD be a detached cryptographic signature of a metadata item.
+A Trust Item in META Identity SHOULD be a detached cryptographic signature of a metadata item.
 
 Both Core and Auxiliary metadata items CAN be signed.
 
@@ -210,7 +212,7 @@ A signature of a Core metadata item SHOULD be a detached cryptographic signature
 
 A signature of an Auxiliary metadata SHOULD be a detached cryptographic signature of the content hash of value in the key-value pair.
 
-A signature MUST be registered with the Identity Signature Contract to be available on the Meta Network. Signatures are mapped to:
+A signature MUST be registered with the Identity Signature Contract to be available on the META Network. Signatures are mapped to:
 
 - META-ID of the owner of the metadata item
 - key of the meta item
@@ -264,9 +266,9 @@ And registered in the same manner as above.
 
 ### Verification
 
-The Meta Network SHOULD NOT be opinionated concerning the quality of identity authenticity. The role of the network SHOULD BE to present evidence for third parties to evaluate. The network COULD however offer some tools to make retrieval and reporting of evidence as clear as possible.
+The META Network SHOULD NOT be opinionated concerning the quality of identity authenticity. The role of the network SHOULD BE to present evidence for third parties to evaluate. The network COULD however offer some tools to make retrieval and reporting of evidence as clear as possible.
 
-The Meta Identity metadata items under the *key* subfolder SHOULD be used as reference for network agents to map cryptographic signatures to META-IDentities.
+The META Identity metadata items under the *key* subfolder SHOULD be used as reference for network agents to map cryptographic signatures to META-IDentities.
 
 ## Security Considerations
 

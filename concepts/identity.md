@@ -61,7 +61,7 @@ The META Identity uses ENS as backend for storage and retrieval, interfaced by t
 
 The Identity contract is upgradeable and MUST be registered in the IdentityController contract. As the IdentityController instantiates all permanent storage, and guarantees that the contents of these cannot be altered between upgrades. Therefore only the instance of the Identity contract that has been registered with the IdentityController can be considered valid for use.
 
-The IdentityResolver contract is used to set and resolve the CID content hash associated with an ENS node (META-ID). The content of a node can ONLY be set by the owner of that node.
+The IdentityResolver contract is modelled on the ENS PublicResolver and used to set and resolve the CID content hash associated with an ENS node (META-ID). The content of a node can ONLY be set by the owner of that node.
 
 In the following we assume the META-ID to be `sha3("foo")`.
 
@@ -117,7 +117,7 @@ The following properties are REQUIRED:
 ```
 id		: META-ID // reverse point to META-ID this metadata belongs to
 name		: string // name whom identity represents
-parent		: CID // pointer to previous version of this metadata
+parent		: CID // pointer to previous version of this metadata, initialised to 0x0
 ```
 #### Auxiliary
 

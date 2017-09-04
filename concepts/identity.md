@@ -121,7 +121,7 @@ parent		: CID // pointer to previous version of this metadata, initialised to 0x
 ```
 #### Auxiliary
 
-Auxiliary metadata items MUST be placed in subfolder `aux`.
+Auxiliary metadata items MUST be children of a container names `aux` in the root level of the MetaID Meta Object.
 
 An Auxiliary metadata item SHOULD be interpreted as key-value pairs:
 

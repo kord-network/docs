@@ -60,11 +60,6 @@ META protocol and seek to create or retrieve META objects. Further information t
 
 * [go-meta](https://github.com/meta-network/go-meta) - The Go META library
 
-## Tools
-
-* [meta-tools](https://github.com/meta-network/meta-tools) - Tools for
-  converting structured data (e.g. XML documents) into META object graphs
-
 ## Contribute
 We welcome community contributions, please see the [contributing guide](CONTRIBUTING.md), thanking you.
 

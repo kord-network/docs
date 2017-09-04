@@ -121,11 +121,7 @@ parent		: CID // pointer to previous version of this metadata, initialised to 0x
 ```
 #### Auxiliary
 
-Auxiliary metadata items MUST be grouped in two subfolders; *key* and *aux*.
-
-All items in the *key* folder SHOULD be considered as public keys used by the META Identity for cryptographic signing purposes.
-
-All items in the *aux* folder SHOULD be considered as external identifiers that have no cryptographic function.
+Auxiliary metadata items MUST be placed in subfolder `aux`.
 
 An Auxiliary metadata item SHOULD be interpreted as key-value pairs:
 
@@ -148,12 +144,12 @@ metaid/meta:
 }
 ```
 
-metaid/key/rsa:
+metaid/aux/rsa:
 ```
 AAAAB3NzaC1yc2EAAAADAQABAAABAQDH52nZuslWyqiAhxRUUVgveBe3hjqlq1cPFo8Ld9BpIe/gBAYffCjXui+cP9ifaHgJP611QBsTXOdhQouwc3bWM1U72xHBMNt+vniCI6xkSyzc/jKE2SQbSPZUIb/z6cBmpi7vpIRw1+D1Njqh0ldqjnJ9TiFqYSNMCSBgKPeg6sb7249Xhj34Km5+HqmRkBnEmCmoHAtCIx51ZeJfANH/uuAjS/II7w+K+6f5x4jyPhLyeu5xOmAXF6MvqC+P/1KAsULL6tw/Qk6d85C5Hy8QKJYwukl9+f0O7oV8aIVKxe6VtpXM3I09FFwR3/iBAdO64Cel4YhepY28DofU3Mrz
 ```
 
-metaid/key/ecdsa:
+metaid/aux/ecdsa:
 ```
 0x040b81120b647d6c1e9e123a50c896a05ea47c660649e72e950b085c2d0d887db83a188f9c4bd06e1067b2c133a777217552a85ac2ba9004885c1ae37976c9abd9
 ```

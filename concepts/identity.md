@@ -179,14 +179,12 @@ We can use *swarm recursive upload* to create a manifest that satisfies the META
 BZZHOST="127.0.0.1:8500" METABZZ=`swarm --manifest=true --recursive up metaid`; curl "http://$BZZHOST/bzzr:/$METABZZ?content_type=text/plain"
 ```
 
-This will yield the following manifests on hash df32102800885d63dd0583da13df50eef9f90dc78a0ef4e588005a9f601b2fa1:
+This will yield the following manifests on hash d10945ebf25cdd0428df6b8334438e16bdc533add4198fede466e1bf2d18a40e:
 
 ```
-{"entries":[{"hash":"90c16d4d04bbadca87682c6ea682d8d9c44c5ee3a7f62077f119c072d7c35a9e","path":"aux/","contentType":"application/bzz-manifest+json","mod_time":"0001-01-01T00:00:00Z"},{"hash":"a7ec7dd31842ed0f4bacd5f7add9e4531d9917972aa17a78e57c8566ba1a3f6f","path":"key/","contentType":"application/bzz-manifest+json","mod_time":"0001-01-01T00:00:00Z"},{"hash":"f0af87f9ffd3bfc5fa8c54fcbf0f659edc572d49052570dc9e56d29c453abc9a","path":"meta","mode":420,"size":187,"mod_time":"2017-08-08T10:02:03+02:00"}]}
+{"entries":[{"hash":"9d6b2c490c2192675ac3511061a54e803f50505014c12d8687356645cb4d3457","path":"aux/","contentType":"application/bzz-manifest+json","mod_time":"0001-01-01T00:00:00Z"},{"hash":"f0af87f9ffd3bfc5fa8c54fcbf0f659edc572d49052570dc9e56d29c453abc9a","path":"meta","mode":420,"size":227,"mod_time":"2017-09-04T12:31:37+02:00"}]}
 
-{"entries":[{"hash":"d9fde9bd2960db437a3d258fee53f6e1dde2dbea07ebbb5e56149b8e7d3afa5f","path":"ecdsa","mode":420,"size":133,"mod_time":"2017-08-08T09:43:43+02:00"},{"hash":"ac56abfa0648d55d2277c267464f1ceea0606d59249c24b3db85f75b494ad7a3","path":"rsa","mode":420,"size":374,"mod_time":"2017-08-08T09:42:08+02:00"}]}
-
-{"entries":[{"hash":"0d615ea5f50d0eae42b3ee071f473e5c0b152a8a7c361c88a42d21bdc835c0cc","path":"bar","mode":420,"size":4,"mod_time":"2017-08-08T09:44:02+02:00"},{"hash":"d3c5856a51886fa58e3add827837c1a708b0cbe3df8763f646a6f7eb5956dd4a","path":"foo","mode":420,"size":3,"mod_time":"2017-08-08T09:43:53+02:00"},{"hash":"5032864c5d1ad9455a6b0ae68d87409b8f5f2957e222dd657f607fc2ebe593d5","path":"xyzzy","mode":420,"size":37,"mod_time":"2017-08-08T09:44:27+02:00"}]}
+{"entries":[{"hash":"0d615ea5f50d0eae42b3ee071f473e5c0b152a8a7c361c88a42d21bdc835c0cc","path":"bar","mode":420,"size":4,"mod_time":"2017-09-04T12:32:28+02:00"},{"hash":"d9fde9bd2960db437a3d258fee53f6e1dde2dbea07ebbb5e56149b8e7d3afa5f","path":"ecdsa","mode":420,"size":133,"mod_time":"2017-09-04T12:32:07+02:00"},{"hash":"d3c5856a51886fa58e3add827837c1a708b0cbe3df8763f646a6f7eb5956dd4a","path":"foo","mode":420,"size":3,"mod_time":"2017-09-04T12:32:20+02:00"},{"hash":"46b543158c5d39c81964ee0100d1d64dcddf7f699b1d5f6dd10b110a69325bcc","path":"rsa","mode":420,"size":373,"mod_time":"2017-09-04T12:31:54+02:00"},{"hash":"5032864c5d1ad9455a6b0ae68d87409b8f5f2957e222dd657f607fc2ebe593d5","path":"xyzzy","mode":420,"size":37,"mod_time":"2017-09-04T12:32:43+02:00"}]}
 ```
 
 The hash of the "meta" file represents the CBOR representation of the above JSON, as described in [META Object encoding](https://github.com/meta-network/docs/blob/master/concepts/object.md#object-encoding).

@@ -30,7 +30,7 @@ designed to be a self-sovereign identity with two functions:
   META Identity metadata.
 - Smart Contract - a collection of code (functions) and data (state) that resides
   at a specific address on the Ethereum blockchain.
-- Trust Item - a detached cryptographic signature of a metadata item.
+- Trust Item - a link between a cryptographic signature and a metadata item.
 - `sha3()` - indicates `keccak256` hashing of the contents within parentheses.
 
 ## Core concepts

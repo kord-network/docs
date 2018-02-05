@@ -53,6 +53,7 @@ MetaService: {
 ```
 MetaService: {
   id: '0xabc...123',
+  available: true,
   displayName: 'Spotify',
   displayImage: ''data:image/jpeg;base64,/9j/4AA.../9k=',
   endpoints: {

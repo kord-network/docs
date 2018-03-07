@@ -1,19 +1,19 @@
-# META Concepts and Specifications
+# KORD Concepts and Specifications
 
-META is both a network of distributed, decentralised systems (the META
+KORD is both a network of distributed, decentralised systems (the KORD
 network), and a protocol which governs how those systems communicate
-(the META protocol).
+(the KORD protocol).
 
-This repository defines concepts and specifications of META.
+This repository defines concepts and specifications of KORD.
 
 ## Status
 
-META is at an early stage of development, expect the documents in
+KORD is at an early stage of development, expect the documents in
 this repository to change frequently during this early phase.
 
 ## Concepts
 
-The primary aim of META is to provide the tooling for building
+The primary aim of KORD is to provide the tooling for building
 large scale, decentralised databases describing real world entities, where
 individual participants are both economically incentivised to provide useful,
 efficient services and are held accountable for any wrong doing.
@@ -21,44 +21,44 @@ efficient services and are held accountable for any wrong doing.
 In order to achieve this, we introduce the following concepts (follow the links
 for each concept for a more detailed description):
 
-* [META Object](concepts/object.md) - a set of properties representing an
+* [KORD Object](concepts/object.md) - a set of properties representing an
   arbitrary entity
 
-* [META Stream](concepts/stream.md) - a persistent, append-only sequence of
-  content-addressed links to META objects
+* [KORD Stream](concepts/stream.md) - a persistent, append-only sequence of
+  content-addressed links to KORD objects
 
-* [META Service](concepts/service.md) - a participant in the network who is
+* [KORD Service](concepts/service.md) - a participant in the network who is
   economically incentivised to provide a service, and can be held accountable
   for its actions
 
-* [META Aggregator](concepts/aggregator.md) - a META service which combines
-  multiple input META streams into a single output META stream
+* [KORD Aggregator](concepts/aggregator.md) - a KORD service which combines
+  multiple input KORD streams into a single output KORD stream
 
-* [META Indexer](concepts/indexer.md) - a META service which reads META objects
-  from a META stream and indexes them based on one or more properties
+* [KORD Indexer](concepts/indexer.md) - a KORD service which reads KORD objects
+  from a KORD stream and indexes them based on one or more properties
 
-* [META Linker](concepts/linker.md) - a META service which creates links
-  between META objects
+* [KORD Linker](concepts/linker.md) - a KORD service which creates links
+  between KORD objects
 
-* [META Merger](concepts/merger.md) - a META service which combines multiple
-  META objects into a single META object
+* [KORD Merger](concepts/merger.md) - a KORD service which combines multiple
+  KORD objects into a single KORD object
 
-* [META Identity](concepts/identity.md) - a META Identity is used to both identify
+* [KORD Identity](concepts/identity.md) - a KORD Identity is used to both identify
 participants in the network using a cryptographic identifier and to provide verifiable
 information about those participants.
 
-* [META Courtroom](concepts/courtroom.md) - a suite of smart contracts for META service
+* [KORD Courtroom](concepts/courtroom.md) - a suite of smart contracts for KORD service
 agreements, between service provider and client, which can be used to claim collateral
-if a META service is found guilty of wrong doing.
+if a KORD service is found guilty of wrong doing.
 
-* META Token - META tokens are used in automated exchange between services and providers
+* KORD Token - KORD tokens are used in automated exchange between services and providers
 on the network. Tokens can also be used explicitly by applications that implement the
-META protocol and seek to create or retrieve META objects. Further information to follow.
+KORD protocol and seek to create or retrieve KORD objects. Further information to follow.
 
 
 ## Implementations
 
-* [go-meta](https://github.com/meta-network/go-meta) - The Go META library
+* [go-kord](https://github.com/kord-network/go-kord) - The Go KORD library
 
 ## Contribute
 We welcome community contributions, please see the [contributing guide](CONTRIBUTING.md), thanking you.

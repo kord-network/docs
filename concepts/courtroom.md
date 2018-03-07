@@ -1,17 +1,17 @@
-# META Courtroom
+# KORD Courtroom
 
-This document outlines the concept of a META Courtroom; which is a suite of smart contracts
-for META service agreements, between service provider and client, which can
-be used to claim collateral if a META service is found guilty of wrong doing.
+This document outlines the concept of a KORD Courtroom; which is a suite of smart contracts
+for KORD service agreements, between service provider and client, which can
+be used to claim collateral if a KORD service is found guilty of wrong doing.
 
 ## Status of this Document
 
-The META protocol is at an early stage of development, expect this document to
+The KORD protocol is at an early stage of development, expect this document to
 change frequently during this early phase.
 
 ## Outline
 
-The META Courtroom aims to provide a framework for META services and service
+The KORD Courtroom aims to provide a framework for KORD services and service
 clients which is used for conflict resolution in relation to the service being provided.
 The service provider specifies their service offering by tendering a process
 in which they can be held accountable for not complying with their quality guarantees.
@@ -24,7 +24,7 @@ the service provider can be held accountable by an automatic self-enforcing puni
 
 Such accountability is crucial in the design of scalable decentralised service economies.
 
-The META Courtroom concept is based on [swarm swap swear and swindle](http://swarm-gateways.net/bzz:/theswarm.eth/ethersphere/orange-papers/1/sw%5E3.pdf),
+The KORD Courtroom concept is based on [swarm swap swear and swindle](http://swarm-gateways.net/bzz:/theswarm.eth/ethersphere/orange-papers/1/sw%5E3.pdf),
 a generalised framework for incentivised service provision.
 
 The courtroom framework will offer a generic interface for handling cases,

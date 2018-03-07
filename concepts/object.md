@@ -1,32 +1,32 @@
-# META Object
+# KORD Object
 
-This document outlines the concept of a META object which is used to represent
-all data in the META network.
+This document outlines the concept of a KORD object which is used to represent
+all data in the KORD network.
 
 ## Status of this Document
 
-The META protocol is at an early stage of development, expect this document to
+The KORD protocol is at an early stage of development, expect this document to
 change frequently during this early phase.
 
 ## Outline
 
-A META object is a set of properties representing an arbitrary entity, and all
-data in the META network is represented by META objects.
+A KORD object is a set of properties representing an arbitrary entity, and all
+data in the KORD network is represented by KORD objects.
 
-The value of a META object's properties can either be an arbitrary string or a
-link to another META object (links are discussed further in the
+The value of a KORD object's properties can either be an arbitrary string or a
+link to another KORD object (links are discussed further in the
 [Object Linking](#object-linking) section).
 
-As a concrete example, consider a social network which uses the META network
+As a concrete example, consider a social network which uses the KORD network
 to maintain a global database of users and their connections. In this example,
-users would be represented by META objects with string-valued properties like
+users would be represented by KORD objects with string-valued properties like
 `name`, `gender` and `dateOfBirth`, and their connections would be represented
-by a `friends` property whose value is a link to another META object which
+by a `friends` property whose value is a link to another KORD object which
 represents a set of users.
 
 ## Object Identifier
 
-In order to reference and retrieve objects in the META network, they require
+In order to reference and retrieve objects in the KORD network, they require
 a unique identifier.
 
 ### Traditional Identifiers
@@ -40,9 +40,9 @@ use a [Universally Unique Identifier](https://en.wikipedia.org/wiki/Universally_
 (UUID), but this identifier has no relation to the actual data, so two
 identical objects in the database could end up with two distinct identifiers.
 
-### META Identifiers
+### KORD Identifiers
 
-Given databases in the META network are not only distributed, but also
+Given databases in the KORD network are not only distributed, but also
 decentralised, trying to co-ordinate to ensure unique identifiers are assigned
 to objects is challenging, but there is a technique which is easy to implement
 and has some desired properties: use the cryptographic hash of some canonical
@@ -72,11 +72,11 @@ identifier of the object and checking it matches what was requested.
 
 ## Object Encoding
 
-In order to store and transfer objects in the META network, we need to be able
+In order to store and transfer objects in the KORD network, we need to be able
 to encode them into some binary format, and we also need this
 format to be canonical so that object identifiers are generated consistently.
 
-At this early stage, META has adopted the same canonical representation as the
+At this early stage, KORD has adopted the same canonical representation as the
 [IPLD project](https://ipld.io/) which is
 [canonicalised CBOR with tags](https://github.com/ipld/specs/tree/master/ipld#canonical-format).
 
@@ -90,11 +90,11 @@ TODO: expand on the above paragraph.
 
 ## Object Linking
 
-As well as storing objects for later retrieval, the META network also provides
+As well as storing objects for later retrieval, the KORD network also provides
 the ability to link objects together, thus forming graphs of objects which can
 be traversed.
 
-Because META objects can have abitrary property names and values, links to
+Because KORD objects can have abitrary property names and values, links to
 other objects are made explicit in the underlying object encoding so that
 there is no debate whether a property is a string or a link.
 
@@ -103,9 +103,9 @@ CBOR tag (see [RFC 7049 section 2.4](https://tools.ietf.org/html/rfc7049#section
 
 ## Base properties
 
-All META objects have a base set of properties:
+All KORD objects have a base set of properties:
 
-* `source` - the META Identity which is the source of the information
+* `source` - the KORD Identity which is the source of the information
   represented by the object
 * `signature` - a cryptographic signature proving the object's source
 * `createdAt` - the time the object was created
